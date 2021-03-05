@@ -1,0 +1,27 @@
+
+.navBar{
+    position: sticky;
+    padding-left: 3%;
+    padding-right: 3%;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    background-color: var(--nav-color);
+}
+
+.title{
+    font-weight: 600;
+}
+
+.navContainer{
+    display: flex;
+    justify-content: left;
+    width: 60%;
+    font-weight: 500;
+}
+.navSearch {
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: 1px var(--gray) solid;
+    font-size: 1rem;
+}
