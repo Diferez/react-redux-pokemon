@@ -35,33 +35,33 @@ const PokeCompare = (props) => {
         var data = [
             {
                 name: "HP",
-                first: first.stats[0]['base_stat'],
-                second: second.stats[0]['base_stat']
+                [first.name]: first.stats[0]['base_stat'],
+                [second.name]: second.stats[0]['base_stat']
             },
             {
                 name: "Attack",
-                first: first.stats[1]['base_stat'],
-                second: second.stats[1]['base_stat']
+                [first.name]: first.stats[1]['base_stat'],
+                [second.name]: second.stats[1]['base_stat']
             },
             {
                 name: "Defense",
-                first: first.stats[2]['base_stat'],
-                second: second.stats[2]['base_stat']
+                [first.name]: first.stats[2]['base_stat'],
+                [second.name]: second.stats[2]['base_stat']
             },
             {
                 name: "Sp. Atk",
-                first: first.stats[3]['base_stat'],
-                second: second.stats[3]['base_stat']
+                [first.name]: first.stats[3]['base_stat'],
+                [second.name]: second.stats[3]['base_stat']
             },
             {
                 name: "Sp. Def",
-                first: first.stats[4]['base_stat'],
-                second: second.stats[4]['base_stat']
+                [first.name]: first.stats[4]['base_stat'],
+                [second.name]: second.stats[4]['base_stat']
             },
             {
                 name: "Speed",
-                first: first.stats[5]['base_stat'],
-                second: second.stats[5]['base_stat']
+                [first.name]: first.stats[5]['base_stat'],
+                [second.name]: second.stats[5]['base_stat']
             },
         ];
         return data;
@@ -164,8 +164,8 @@ const PokeCompare = (props) => {
                                 <XAxis dataKey="name" />
                                 <YAxis />
                                 <Tooltip />
-                                <Bar dataKey="first" fill="#8884d8" />
-                                <Bar dataKey="second" fill="#82ca9d" />
+                                <Bar dataKey={first.name} fill="#8884d8" />
+                                <Bar dataKey={second.name} fill="#82ca9d" />
                                 </BarChart>
                             </ResponsiveContainer>
                         </div>

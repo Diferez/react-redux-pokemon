@@ -96,7 +96,7 @@ const PokeDetails = (props) =>{
                         <span>
                             {pokemon.name.toUpperCase()}
                         </span>
-                        <button onClick={compare}>
+                        <button className={styles.compareButton} onClick={compare}>
                             compare to...
                         </button>
                         <button className={styles.closeButton} onClick={bgClick}>
@@ -105,9 +105,11 @@ const PokeDetails = (props) =>{
                     </div>
                     <div className={styles.detailsContainer}>
                         <div className={styles.detailsPokemon}>
-                            <img className={styles.pokemonImg} alt={pokemon.name} src={pokemon.sprites['front_default']}></img>
+                            <div>
+                                <img className={styles.pokemonImg} alt={pokemon.name} src={pokemon.sprites['front_default']}></img>
+                            </div>
                             <div className={styles.pokemonContainer}>
-                                <div className={styles.pokemonDescription}>
+                                <div className={styles.pokemonText}>
                                     {isLoaded ? getDescription() : null}
                                     <hr></hr>
                                 </div>
@@ -116,7 +118,7 @@ const PokeDetails = (props) =>{
                                         <span className={styles.characteristicTitle}>
                                             Heigth
                                         </span>
-                                        <span>
+                                        <span className={styles.pokemonText}>
                                             {pokemon.height/10} m
                                         </span>
                                     </span>
@@ -124,7 +126,7 @@ const PokeDetails = (props) =>{
                                         <span className={styles.characteristicTitle}>
                                             Weight
                                         </span>
-                                        <span>
+                                        <span className={styles.pokemonText}>
                                             {pokemon.weight/10} kg
                                         </span>
                                     </span>
@@ -132,16 +134,16 @@ const PokeDetails = (props) =>{
                                         <span className={styles.characteristicTitle}>
                                             Gender
                                         </span>
-                                        <span>
+                                        <span className={styles.pokemonText}>
                                             {getGender()}
                                         </span>
                                     </span>
 
-                                    <span className={styles.characteristic}>
+                                    <span className={styles.characteristicList}>
                                         <span className={styles.characteristicTitle}>
                                             Abilities
-                                        </span>
-                                        <ul>
+                                        </span >
+                                        <ul className={styles.pokemonText}>
                                             {pokemon.abilities.map((ability) => (
                                                 <li key={ability.slot}>
                                                     {ability.ability.name}
@@ -150,11 +152,11 @@ const PokeDetails = (props) =>{
                                         </ul>
                                     </span>
 
-                                    <span className={styles.characteristic}>
+                                    <span className={styles.characteristicList}>
                                         <span className={styles.characteristicTitle}>
                                             Type
                                         </span>
-                                        <ul>
+                                        <ul className={styles.pokemonText}>
                                             {pokemon.types.map((type) => (
                                                 <li key={type.slot}>
                                                     {type.type.name}

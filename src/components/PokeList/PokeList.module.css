@@ -25,8 +25,8 @@
 
 .pokemonList{
     text-align: center;
-    padding-right: 5%;
-    padding-left: 5%;
+    padding-right: 7%;
+    padding-left: 7%;
 }
 
 .hidden{
@@ -37,8 +37,9 @@
     position: fixed;
     top: 200px;
     right: 3%;
-    border-style: groove;
     border-radius: 10px;
-    padding: 1%;
-    background-color: var(--white);
+    padding: 0.5rem;
+    background-color: var(--nav-color);
+    box-shadow: 2px 2px 2px 1px var(--details-bg-);
+
 }

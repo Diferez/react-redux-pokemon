@@ -10,10 +10,11 @@ const Navbar = (props) =>{
     return(
     <nav className={styles.navBar}>
         <span>
-            <h3 className={styles.title}>PokéApp</h3>
+            <a href='/' className={styles.title}>PokéApp</a>
         </span>
         <span className={styles.navContainer}>
-            <span>Pokemon</span>
+            <a href='pokemons' className={styles.navLink}>Pokemon</a>
+            <a href='items' className={styles.navLink}>Items</a>
         </span>
         <span>
             <input type='text' placeholder='Search' className={styles.navSearch} onChange={handlerChange}></input>
