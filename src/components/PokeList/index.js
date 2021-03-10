@@ -27,7 +27,7 @@ const PokeList = (props) =>{
   }, [isVisible]);
  
   const filter= (pokemon) =>{
-    if(props.search.search === '' || pokemon.name.includes(props.search.search)){
+    if(props.search.search === '' || pokemon.name.includes(props.search.search.toLowerCase())){
       return(
         <Pokemon key={pokemon.name} pokeUrl = {pokemon.url} number={pokemons.indexOf(pokemon)+1} name={pokemon.name} display={true}/>
       );
