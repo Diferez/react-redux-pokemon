@@ -19,14 +19,11 @@ function App() {
         <Route path='/' exact>
             <Welcome></Welcome>
         </Route>
-
         <Route path='/pokemons' exact>
-        
           <PokeList/>
           <PokeDetails/>
           <PokeCompare/>
         </Route>
-      
       </Provider>
     </BrowserRouter>
   );

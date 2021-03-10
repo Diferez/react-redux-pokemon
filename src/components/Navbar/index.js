@@ -1,25 +1,29 @@
 import styles from './Navbar.module.css';
-import {connect} from 'react-redux';
+import {connect, useDispatch} from 'react-redux';
 import {updateSearch} from '../../actions/searchActions';
-
+import { Link } from 'react-router-dom';
+import {filter} from '../../actions/pokemonActions'
 const Navbar = (props) =>{
+  const dispatch = useDispatch();
+
   const filterUpdate = (event) => {
-    props.updateSearch(event.target.value);
+    props.updateSearch(event.target.value.toLowerCase());
+    dispatch(filter(event.target.value.toLowerCase()))
   }
+
   return(
   <nav className={styles.navBar}>
     <span>
-      <a href='/' className={styles.title}>PokéApp</a>
+      <Link to='/' className={styles.title}>PokéApp</Link>
     </span>
     <span className={styles.navContainer}>
-      <a href='pokemons' className={styles.navLink}>Pokemon</a>
-      <a href='items' className={styles.navLink}>Items</a>
+      <Link to='pokemons' className={styles.navLink}>Pokemon</Link>
+      <Link to='items' className={styles.navLink}>Items</Link>
     </span>
     <span>
       <input type='text' placeholder='Search' className={styles.navSearch} onChange={filterUpdate}></input>
     </span>
   </nav>);
-  
 };
 
 const mapStateToProps = (state) => {

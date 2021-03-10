@@ -23,7 +23,7 @@ const PokeCompare = (props) => {
   };
 
   const getGender = () =>{
-    var gender = Math.floor(Math.random() * 9) - 1;
+    let gender = Math.floor(Math.random() * 9) - 1;
     if(gender > 4){
       return 'Female';
     }else if(gender > -1){
@@ -33,7 +33,7 @@ const PokeCompare = (props) => {
   };
 
   const getData = () =>{
-    var data = [
+    let data = [
       {
         name: 'HP',
         [first.name]: first.stats[0]['base_stat'],
@@ -67,7 +67,6 @@ const PokeCompare = (props) => {
     ];
     return data;
   };
-
 
   return(
     <div>

@@ -32,7 +32,7 @@ const PokeDetails = (props) =>{
   }, [pokemon]);
 
   const getGender = () =>{
-    var gender = Math.floor(Math.random() * 9) - 1;
+    let gender = Math.floor(Math.random() * 9) - 1;
     if(gender > 4){
       return 'Female';
     }else if(gender > -1){
@@ -42,12 +42,12 @@ const PokeDetails = (props) =>{
   };
 
   const getDescription = () => {
-    var obj = description.['flavor_text_entries'].find(element => element.language.name === 'en');
+    let obj = description.['flavor_text_entries'].find(element => element.language.name === 'en');
     return obj['flavor_text'].replace('','');
   };
 
   const getData = () =>{
-    var data = [
+    let data = [
       {
         name: 'HP',
         value: pokemon.stats[0]['base_stat']

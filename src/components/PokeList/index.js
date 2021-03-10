@@ -9,7 +9,7 @@ import {fetchPokemons} from '../../actions/pokemonActions';
 
 
 const PokeList = (props) =>{
-  const pokemons = props.pokemons;
+  const pokemons = props.pokemons.filteredPokemons;
   const [page, setPage] = useState(0);
   const dispatch = useDispatch();
   const [ containerRef, isVisible] = useElementOnScreen({
@@ -26,18 +26,6 @@ const PokeList = (props) =>{
 
   }, [isVisible]);
  
-  const filter= (pokemon) =>{
-    if(props.search.search === '' || pokemon.name.includes(props.search.search.toLowerCase())){
-      return(
-        <Pokemon key={pokemon.name} pokeUrl = {pokemon.url} number={pokemons.indexOf(pokemon)+1} name={pokemon.name} display={true}/>
-      );
-    }else{
-      return(
-        <Pokemon key={pokemon.name} pokeUrl = {pokemon.url} number={pokemons.indexOf(pokemon)+1} name={pokemon.name} display={false}/>
-      );
-    }
-  };
-
 
 
   return(
@@ -48,7 +36,9 @@ const PokeList = (props) =>{
       </span>
       :
       null}
-      {pokemons ? pokemons.map(filter) : null}
+      {pokemons ? pokemons.map(pokemon =>
+      <Pokemon key={pokemon.name} pokeUrl = {pokemon.url} number={props.pokemons.pokemons.indexOf(pokemon) + 1} name={pokemon.name} display={true}/> )
+      : null}
       <div ref={containerRef}>
         <img className={styles.pokemonImg} src={pokeball} alt='Loading...'></img>
       </div>

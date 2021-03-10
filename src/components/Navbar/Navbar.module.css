@@ -33,7 +33,7 @@
 .navSearch {
   padding: 3%;
   border-radius: 5px;
-  border: 1px var(--gray) solid;
+  border: 1px solid var(--gray);
   font-size: 1rem;
 }
 

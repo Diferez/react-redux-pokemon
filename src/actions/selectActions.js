@@ -4,7 +4,7 @@ import {createAsyncThunk, createAction} from '@reduxjs/toolkit';
 export const closePokemon = createAction('select/close');
 
 const getPokemon = (url) =>{
-  var pokemons = fetch(url)
+  let pokemons = fetch(url)
            .then(response => response.json());
   return pokemons
 };
