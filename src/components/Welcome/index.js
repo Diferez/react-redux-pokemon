@@ -1,5 +1,6 @@
-import loading from './getting_ready.gif'
+import loading from './getting_ready.gif';
 import styles from './Welcome.module.css';
+
 const Welcome = () => {
   return(
     <div className={styles.welcomeContainer}>
@@ -7,6 +8,6 @@ const Welcome = () => {
     <img className={styles.loadGif} src={loading} alt='Loading'></img>
     </div>
   );
-}
+};
 
-export default Welcome
+export default Welcome;

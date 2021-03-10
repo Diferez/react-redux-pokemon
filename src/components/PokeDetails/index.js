@@ -1,4 +1,4 @@
-import {connect, useDispatch} from 'react-redux'
+import {connect, useDispatch} from 'react-redux';
 import styles from './PokeDetails.module.css';
 import {
   BarChart,
@@ -15,14 +15,14 @@ import React, {useEffect} from 'react';
 const PokeDetails = (props) =>{
   const pokemon = Object.keys(props.select.pokemon).length !== 0 ? props.select.pokemon: null;
   const description = Object.keys(props.select.pokemon).length !== 0 ? props.select.description: null;
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   const closeDetailsWindow = (event) => {
     dispatch(closePokemon());
-  }
+  };
 
   const stopWindowPropagation = (event) =>{
     event.stopPropagation();
-  }
+  };
 
   useEffect(()=>{
     if(Object.keys(props.compare.first).length !== 0 && pokemon){
@@ -39,12 +39,12 @@ const PokeDetails = (props) =>{
       return 'Male';
     }
     return 'Genderless';
-  }
+  };
 
   const getDescription = () => {
     var obj = description.['flavor_text_entries'].find(element => element.language.name === 'en');
     return obj['flavor_text'].replace('','');
-  }
+  };
 
   const getData = () =>{
     var data = [
@@ -74,12 +74,12 @@ const PokeDetails = (props) =>{
       },
     ];
     return data;
-  }
+  };
 
   const compare = () =>{
     props.updateFirst(pokemon);
     dispatch(closePokemon());
-  }
+  };
 
   return (
     <div>
@@ -132,7 +132,6 @@ const PokeDetails = (props) =>{
                       {getGender()}
                     </span>
                   </span>
-
                   <span className={styles.characteristicList}>
                     <span className={styles.characteristicTitle}>
                       Abilities
@@ -145,7 +144,6 @@ const PokeDetails = (props) =>{
                       )}
                     </ul>
                   </span>
-
                   <span className={styles.characteristicList}>
                     <span className={styles.characteristicTitle}>
                       Type
@@ -158,11 +156,8 @@ const PokeDetails = (props) =>{
                       )}
                     </ul>
                   </span>
-                  
                 </div>
-                
               </div>
-              
             </div>
             <div className={styles.detailsStats}>
               <hr></hr>
@@ -177,38 +172,35 @@ const PokeDetails = (props) =>{
                   bottom: 5
                 }}
               >
-
                 <XAxis dataKey="name" />
                 <YAxis />
                 <Tooltip />
-
                 <Bar dataKey="value" fill="#8884d8" />
               </BarChart>
               </ResponsiveContainer>
             </div>
-
           </div>
-          
         </div>
       </div>
       : null}
     </div>
-  )    
-}
+  ); 
+};
 
 const mapStateToProps = (state) => {
   return {
     select: state.select,
     compare: state.compare
   }
-}
+};
 
 const mapDispatchToProps = (dispatch) => {
   return{
     updateFirst: (pokemon) => dispatch(updateFirst(pokemon)),
     updateSecond: (pokemon) => dispatch(updateSecond(pokemon))
   }
-}
+};
+
 export default connect(mapStateToProps,
              mapDispatchToProps)
              (PokeDetails);

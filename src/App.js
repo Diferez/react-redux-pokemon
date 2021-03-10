@@ -1,13 +1,13 @@
 
 import './App.css';
-import Navbar from './components/Navbar'
-import PokeList from './components/PokeList'
-import PokeDetails from './components/PokeDetails'
-import PokeCompare from './components/PokeCompare'
-import Welcome from './components/Welcome'
-import { Provider } from 'react-redux'
-import {BrowserRouter, Route} from 'react-router-dom'
-import store from './store'
+import Navbar from './components/Navbar';
+import PokeList from './components/PokeList';
+import PokeDetails from './components/PokeDetails';
+import PokeCompare from './components/PokeCompare';
+import Welcome from './components/Welcome';
+import { Provider } from 'react-redux';
+import {BrowserRouter, Route} from 'react-router-dom';
+import store from './store';
 
 
 

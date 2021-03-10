@@ -1,5 +1,5 @@
 import React, { useState, useEffect} from 'react';
-import {connect, useDispatch} from 'react-redux'
+import {connect, useDispatch} from 'react-redux';
 import styles from './PokeList.module.css';
 import pokeball from './simple_pokeball.gif';
 import useElementOnScreen from './useElementOnScreen';
@@ -11,7 +11,7 @@ import {fetchPokemons} from '../../actions/pokemonActions';
 const PokeList = (props) =>{
   const pokemons = props.pokemons;
   const [page, setPage] = useState(0);
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   const [ containerRef, isVisible] = useElementOnScreen({
     root: null,
     rootMargin: '0px',
@@ -22,7 +22,7 @@ const PokeList = (props) =>{
     if(isVisible && props.search.search === ''){  
       dispatch(fetchPokemons(page))
       setPage(page+1);
-    }
+    };
 
   }, [isVisible]);
  
@@ -36,7 +36,7 @@ const PokeList = (props) =>{
         <Pokemon key={pokemon.name} pokeUrl = {pokemon.url} number={pokemons.indexOf(pokemon)+1} name={pokemon.name} display={false}/>
       );
     }
-  }
+  };
 
 
 
@@ -52,11 +52,9 @@ const PokeList = (props) =>{
       <div ref={containerRef}>
         <img className={styles.pokemonImg} src={pokeball} alt='Loading...'></img>
       </div>
-      
-      
     </div>
-  )
-}
+  );
+};
 
 const mapStateToProps = (state) => {
   return {
@@ -64,16 +62,9 @@ const mapStateToProps = (state) => {
     compare: state.compare,
     pokemons: state.pokemons,
     selected: state.select
-  }
-}
-
-const mapDispatchToProps = (dispatch) => {
-  return{
-
-  }
-}
+  };
+};
 
 
-export default connect(mapStateToProps,
-             mapDispatchToProps)
-             (PokeList);
+
+export default connect(mapStateToProps)(PokeList);

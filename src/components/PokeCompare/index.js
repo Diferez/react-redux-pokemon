@@ -9,17 +9,18 @@ import {
   ResponsiveContainer
   } from 'recharts';
 import {clearPokemons} from '../../actions/compareActions';
+
 const PokeCompare = (props) => {
   const first = props.compare.first;
   const second = props.compare.second;
 
   const closeCompareWindow = () => {
     props.clearPokemons();
-  }
+  };
 
   const stopClickPropagation = (event) =>{
     event.stopPropagation();
-  }
+  };
 
   const getGender = () =>{
     var gender = Math.floor(Math.random() * 9) - 1;
@@ -29,7 +30,7 @@ const PokeCompare = (props) => {
       return 'Male';
     }
     return 'Genderless';
-  }
+  };
 
   const getData = () =>{
     var data = [
@@ -65,9 +66,10 @@ const PokeCompare = (props) => {
       },
     ];
     return data;
-  }
+  };
+
+
   return(
-    
     <div>
       {
         Object.keys(second).length !== 0 ?
@@ -155,19 +157,20 @@ const PokeCompare = (props) => {
         : null
       }
     </div>
-  )
-}
+  );
+};
 
 const mapStateToProps = (state) => {
   return {
     compare: state.compare
   };
-}
+};
+
 const mapDispatchToProps = (dispatch) => {
   return{
     clearPokemons: () => dispatch(clearPokemons()),
   };
-}
+};
 
 export default connect(mapStateToProps,
              mapDispatchToProps)

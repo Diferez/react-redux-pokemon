@@ -1,5 +1,5 @@
 import styles from './Navbar.module.css';
-import {connect} from 'react-redux'
+import {connect} from 'react-redux';
 import {updateSearch} from '../../actions/searchActions';
 
 const Navbar = (props) =>{
@@ -20,18 +20,19 @@ const Navbar = (props) =>{
     </span>
   </nav>);
   
-}
+};
 
 const mapStateToProps = (state) => {
   return {
     search: state.search
   };
-}
+};
+
 const mapDispatchToProps = (dispatch) => {
   return{
     updateSearch: (search) => dispatch(updateSearch(search))
   };
-}
+};
 
 
 export default connect(mapStateToProps,

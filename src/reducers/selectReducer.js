@@ -1,5 +1,5 @@
 import {fetchPokemon, closePokemon} from '../actions/selectActions';
-import {createReducer} from '@reduxjs/toolkit'
+import {createReducer} from '@reduxjs/toolkit';
 
 const initialState = {
   pokemon: {
@@ -8,7 +8,7 @@ const initialState = {
   description:{
 
   }
-}
+};
 
 const selectReducer = createReducer(initialState, (builder)=>{
   builder
@@ -27,8 +27,8 @@ const selectReducer = createReducer(initialState, (builder)=>{
 
         }
       }
-    })
+    });
 
-})
+});
 
 export default selectReducer;

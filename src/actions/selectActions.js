@@ -1,13 +1,13 @@
 
-import {createAsyncThunk, createAction} from '@reduxjs/toolkit'
+import {createAsyncThunk, createAction} from '@reduxjs/toolkit';
 
-export const closePokemon = createAction('select/close')
+export const closePokemon = createAction('select/close');
 
 const getPokemon = (url) =>{
   var pokemons = fetch(url)
            .then(response => response.json());
   return pokemons
-}
+};
 
 export const fetchPokemon = createAsyncThunk(
   'pokeapp/pokemon',

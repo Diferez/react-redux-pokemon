@@ -1,4 +1,4 @@
-import {createAsyncThunk} from '@reduxjs/toolkit'
+import {createAsyncThunk} from '@reduxjs/toolkit';
 
 const getPokemons = (page) =>{
   let off = page*20;
@@ -8,7 +8,7 @@ const getPokemons = (page) =>{
   
   
   return pokemons;
-}
+};
 
 export const fetchPokemons = createAsyncThunk(
   'pokeapp/pokemons',

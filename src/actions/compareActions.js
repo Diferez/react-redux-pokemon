@@ -8,17 +8,17 @@ export const updateFirst = (pokemon) => {
     type: UPDATE_FIRST,
     payload: pokemon
   }
-}
+};
 
 export const updateSecond = (pokemon) => {
   return { 
   type: UPDATE_SECOND,
   payload: pokemon
   }
-}
+};
 
 export const clearPokemons = () =>{
   return{
   type: CLEAR_POKEMONS
   }
-}
+};

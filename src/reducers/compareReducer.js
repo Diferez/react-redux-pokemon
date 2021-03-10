@@ -7,7 +7,7 @@ const initialState = {
   second:{
 
   }
-}
+};
 
 function compareReducer (state = initialState, action){
   switch (action.type) {
@@ -15,13 +15,13 @@ function compareReducer (state = initialState, action){
       return {
         ...state,
         first: action.payload
-      }
+      };
       
     case UPDATE_SECOND:
       return {
         ...state,
         second: action.payload
-      }
+      };
 
     case CLEAR_POKEMONS:
       return{
@@ -31,11 +31,11 @@ function compareReducer (state = initialState, action){
         second:{
       
         }
-      }
+      };
 
     default:
-      return state
+      return state;
   }
-}
+};
 
 export default compareReducer;
