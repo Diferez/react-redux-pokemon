@@ -1,15 +1,19 @@
-export const UPDATE_POKEMON = 'UPDATE_POKEMON';
-export const CLEAR_POKEMON = 'CLEAR_POKEMON';
 
-export const updatePokemon = (pokemon) => {
-    return { 
-        type: UPDATE_POKEMON,
-        payload: pokemon
-    }
-};
+import {createAsyncThunk, createAction} from '@reduxjs/toolkit'
 
-export const clearPokemon = () =>{
-    return{
-        type: CLEAR_POKEMON
-    }
-};
+export const closePokemon = createAction('select/close')
+
+const getPokemon = (url) =>{
+  var pokemons = fetch(url)
+           .then(response => response.json());
+  return pokemons
+}
+
+export const fetchPokemon = createAsyncThunk(
+  'pokeapp/pokemon',
+  async (url, thunkAPI) => {
+    const pokemon = await getPokemon(url);
+    const description = await getPokemon(pokemon.species.url);
+    return [pokemon, description];
+  }
+);

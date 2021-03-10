@@ -1,139 +1,141 @@
  
 .detailsBackground{
-    width: 100vw;
-    height: 100vh;
-    background-color: var(--details-bg-);
-    position: fixed;
-    display: flex;
-    top: 0;
-    left: 0;
-    align-items: center;
-    justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--details-bg-);
+  position: fixed;
+  display: flex;
+  top: 0;
+  left: 0;
+  align-items: center;
+  justify-content: center;
 }
 .compareButton{
-    border-radius: 10px;
-    border-style: groove;
-    background-color: var(--white);
-    border-color: var(--gray);
-    font-size: 0.9rem;
+  border-radius: 10px;
+  border-style: groove;
+  background-color: var(--white);
+  border-color: var(--gray);
+  font-size: 0.9rem;
+  width: 9rem;
+  height: 3rem;
 }
 .detailsWindow{
-    width: 50%;
-    height: 80%;
-    background-color: var(--white);
+  width: 50%;
+  height: 85%;
+  background-color: var(--white);
 }
 
 .detailsHeader{
-    background-color: var(--nav-color);
-    padding: 3%;
-    font-weight: 700;
-    font-size: 1.5rem;
-    display: flex;
-    justify-content: space-between;
+  background-color: var(--nav-color);
+  padding: 3%;
+  font-weight: 700;
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: space-between;
 }
 
 .detailsContainer{
-    width: 100%;
-    height: 85%;
-    display: grid;
-    grid-template-rows: 50% 50%;
-    vertical-align: center;
+  width: 100%;
+  height: 85%;
+  display: grid;
+  grid-template-rows: 50% 50%;
+  vertical-align: center;
 }
 .detailsPokemon{
-    display: grid;
-    grid-template-columns: 30% 70%;
-    align-items: center;
+  display: grid;
+  grid-template-columns: 30% 70%;
+  align-items: center;
 }
 
 .pokemonImg{
-    width: 100%;
-    height: auto;
+  width: 100%;
+  height: auto;
 }
 .pokemonContainer{
-    display:grid;
-    grid-template-rows: 40%, 60%;
+  display:grid;
+  grid-template-rows: 40%, 60%;
 }
 
 .pokemonCharacteristics{
-    width: 100%;
-    display: flex;
-    break-after: 3;
-    justify-content: space-between;
-    padding-left: 5%;
-    padding-right: 5%;
-    flex-wrap: wrap;
+  width: 100%;
+  display: flex;
+  break-after: 3;
+  justify-content: space-between;
+  padding-left: 5%;
+  padding-right: 5%;
+  flex-wrap: wrap;
 }
 
 .characteristic{
-    padding-top: 5%;
-    width: 33%;
-    display: flex;
-    flex-direction: column;
-    
+  padding-top: 5%;
+  width: 33%;
+  display: flex;
+  flex-direction: column;
+  
 }
 
 .characteristicList{
-    padding-top: 5%;
-    width: 45%;
-    display: flex;
-    flex-direction: column;
-    
+  padding-top: 5%;
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  
 }
 
 .characteristicTitle{
-    font-weight: 700;
+  font-weight: 700;
 }
 .closeButton{
-    border-style: none;
-    background-color: Transparent;
-    font-size: 1.2rem;
-    font-weight: 500;
-    padding: 2%;
+  border-style: none;
+  background-color: Transparent;
+  font-size: 1.2rem;
+  font-weight: 500;
+  padding: 2%;
 }
 
 .pokemonText{
-    font-size: 1.1rem;
-    font-weight: 400;
+  font-size: 1.1rem;
+  font-weight: 400;
 }
 
 
 @media (max-width: 770px){
-    .detailsWindow{
-        width: 80%;
-        height: 80%;
-        background-color: var(--white);
-    }
+  .detailsWindow{
+    width: 80%;
+    height: 80%;
+    background-color: var(--white);
+  }
 }
 
 @media (max-width: 500px){
-    .detailsWindow{
-        width: 90%;
-        height: 90%;
-        background-color: var(--white);
-        padding: 3%;
-    }
+  .detailsWindow{
+    width: 90%;
+    height: 90%;
+    background-color: var(--white);
+    padding: 3%;
+  }
 
-    .detailsPokemon{
-        width: 100%;
-        grid-template-columns: auto;
-        grid-template-rows: 40% 60%;
-        text-align: center;
-    }
+  .detailsPokemon{
+    width: 100%;
+    grid-template-columns: auto;
+    grid-template-rows: 40% 60%;
+    text-align: center;
+  }
 
-    .pokemonImg{
-        width: 13rem;
-        height: 13rem;
-    }
-    
+  .pokemonImg{
+    width: 13rem;
+    height: 13rem;
+  }
+  
 
 
-    .pokemonText{
-        font-size: 1rem;
-        font-weight: 400;
-    }
+  .pokemonText{
+    font-size: 1rem;
+    font-weight: 400;
+  }
 
-    .detailsContainer{
-        height: 90%;
-        grid-template-rows: 60% 40%;
-    }
+  .detailsContainer{
+    height: 90%;
+    grid-template-rows: 60% 40%;
+  }
 }
