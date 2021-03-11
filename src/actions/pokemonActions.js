@@ -1,9 +1,12 @@
 import {createAsyncThunk, createAction} from '@reduxjs/toolkit';
+import {API_URL} from '../utils'
+
 export const filter = createAction('pokeApp/search');
+
 const getPokemons = (page) =>{
   let off = page * 20;
   let lim = 20;
-  let pokemons = fetch('https://pokeapi.co/api/v2/pokemon/?offset=' + off + '&limit=' + lim)
+  let pokemons = fetch(API_URL + '?offset=' + off + '&limit=' + lim)
                  .then(response => response.json());
   
   
